@@ -91,7 +91,7 @@
       "who": "Biedrībā aicināts iestāties ikviens LELB mācītājs un mācītāja pienākumu izpildītājs, kurš vēlas atbalstīt kolēģus grūtībās.",
       "steps": [
         { "title": "Aizpildi pieteikumu", "text": "Norādi vārdu, dzimšanas datumu, ordinācijas datumu, draudzes, kurās kalpo, un kontaktus." },
-        { "title": "Valde izskata pieteikumu", "text": "Tuvākajā valdes sēdē, ne vēlāk kā divu nedēļu laikā. Lēmumu tev paziņosim nedēļas laikā." },
+        { "title": "Valde izskata pieteikumu", "text": "Tuvākajā valdes sēdē, ne vēlāk kā divu nedēļu laikā." },
         { "title": "Maksā biedra naudu", "text": "10 € mēnesī uz biedrības kontu. Tā ir tava daļa kopīgajā kasē." }
       ],
       "cta": "Aizpildīt pieteikumu",
