@@ -1,0 +1,75 @@
+{{> head }}
+{{> header }}
+<main id="saturs">
+
+  <section class="hero">
+    <div class="wrap">
+      <svg class="beam-svg" viewBox="0 0 600 170" aria-hidden="true">
+        <path d="M300 8 V156 M266 156 H334" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <g class="beam">
+          <path d="M80 40 H520" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M80 40 L48 104 M80 40 L112 104 M520 40 L488 104 M520 40 L552 104" stroke="var(--ink)" stroke-width="1" fill="none"/>
+          <path d="M42 104 H118 A38 16 0 0 1 42 104 Z M482 104 H558 A38 16 0 0 1 482 104 Z" fill="var(--water-soft)" stroke="var(--water)" stroke-width="1.5"/>
+          <text x="80" y="146" text-anchor="middle" font-family="Commissioner, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">{{ verse.pansA }}</text>
+          <text x="520" y="146" text-anchor="middle" font-family="Commissioner, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">{{ verse.pansB }}</text>
+        </g>
+      </svg>
+      <h1 class="verse">
+        <span class="verse-lead">{{ verse.lead }}</span>
+        <span class="split">
+          <span class="half half-a"><span>{{ verse.d1 }}</span><span>{{ verse.d2 }}</span></span>
+          <span class="split-rule" aria-hidden="true"></span>
+          <span class="half half-b"><span>{{ verse.m1 }}</span><span>{{ verse.m2 }}</span></span>
+        </span>
+      </h1>
+      <p class="eyebrow verse-ref">{{ verse.ref }}</p>
+      <p class="hero-sub">{{ home.heroSub }}</p>
+      <div class="ctas">
+        <a class="btn btn-pri" href="iestaties.html">{{ home.ctaJoin }}</a>
+        <a class="btn btn-sec" href="#palidziba">{{ home.ctaHelp }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-white" id="par-mums">
+    <div class="wrap">
+      <header class="sec-hd"><p class="eyebrow">{{ home.about.eyebrow }}</p><h2>{{ home.about.title }}</h2></header>
+      <div class="about-in">
+        <div class="prose">{{#each home.about.paragraphs}}<p>{{ .text }}</p>{{/each}}</div>
+        <dl class="facts">{{#each home.about.facts}}<div><dt>{{ .n }}</dt><dd>{{ .label }}</dd></div>{{/each}}</dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ka-darbojas">
+    <div class="wrap">
+      <header class="sec-hd"><p class="eyebrow">{{ home.how.eyebrow }}</p><h2>{{ home.how.title }}</h2></header>
+      <ol class="steps">{{#each home.how.steps}}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{/each}}</ol>
+    </div>
+  </section>
+
+  <section class="sec sec-white" id="palidziba">
+    <div class="wrap">
+      <header class="sec-hd"><p class="eyebrow">{{ home.help.eyebrow }}</p><h2>{{ home.help.title }}</h2><p class="lede">{{ home.help.intro }}</p></header>
+      <div class="cards">{{#each home.help.items}}<article class="card"><h3>{{ .title }}</h3><p>{{ .text }}</p></article>{{/each}}</div>
+      <div class="panel ask">
+        <h3>{{ home.help.askTitle }}</h3>
+        <p>{{ home.help.ask }}</p>
+        <p><a href="#kontakti">{{ home.help.askLink }}</a> · <a href="mailto:{{ footer.email }}">{{ footer.email }}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="iestaties">
+    <div class="wrap">
+      <header class="sec-hd"><p class="eyebrow">{{ home.join.eyebrow }}</p><h2>{{ home.join.title }}</h2><p class="lede">{{ home.join.who }}</p></header>
+      <ol class="steps">{{#each home.join.steps}}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{/each}}</ol>
+      <div class="join-foot">
+        <a class="btn btn-pri" href="iestaties.html">{{ home.join.cta }}</a>
+        <p>{{{ home.join.note }}}</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{> footer }}

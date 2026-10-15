@@ -1,0 +1,32 @@
+<footer class="ft" id="kontakti">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <a class="brand" href="index.html">{{> logo }}<span><b>{{ meta.siteName }}</b><small>{{ meta.since }}</small></span></a>
+        <h2 class="ft-h">{{ footer.contacts }}</h2>
+        <p>{{ footer.address }}<br><a href="mailto:{{ footer.email }}">{{ footer.email }}</a></p>
+      </div>
+      <div>
+        <h2 class="ft-h">{{ footer.board }}</h2>
+        <dl class="ft-list">
+          {{#each footer.people}}<div><dt>{{ .name }}</dt><dd><a href="tel:{{ .tel }}">{{ .phone }}</a></dd></div>{{/each}}
+        </dl>
+      </div>
+      <div>
+        <h2 class="ft-h">{{ footer.req }}</h2>
+        <dl class="ft-list">
+          <div><dt>{{ footer.regLabel }}</dt><dd>{{ footer.reg }}</dd></div>
+          <div><dt>{{ footer.bankLabel }}</dt><dd>{{ footer.bank }}</dd></div>
+        </dl>
+        <p class="ft-iban-label">{{ footer.ibanLabel }}</p>
+        <div class="iban">
+          <code>{{ footer.ibanPretty }}</code>
+          <button class="copy" type="button" data-copy="{{ footer.iban }}" data-done="{{ ui.copied }}" data-fail="{{ ui.copyFail }}">{{ ui.copy }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom"><span>{{ meta.rights }}</span><span>{{ verse.ref }}</span></div>
+  </div>
+</footer>
+</body>
+</html>

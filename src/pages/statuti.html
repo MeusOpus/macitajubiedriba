@@ -1,0 +1,19 @@
+{{> head }}
+{{> header }}
+<main id="saturs">
+  <div class="wrap">
+    <header class="page-hd">
+      <p class="eyebrow">{{ statutes.eyebrow }}</p>
+      <h1>{{ statutes.title }}</h1>
+      <p class="lede">{{ statutes.intro }}</p>
+    </header>
+    <div class="statutes">
+      <details class="toc" open>
+        <summary>{{ ui.toc }}</summary>
+        <ol>{{{ statutesToc }}}</ol>
+      </details>
+      <div class="chapters">{{{ statutesHtml }}}</div>
+    </div>
+  </div>
+</main>
+{{> footer }}

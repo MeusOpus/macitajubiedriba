@@ -1,0 +1,89 @@
+{{> head }}
+{{> header }}
+<main id="saturs">
+  <div class="wrap">
+    <header class="page-hd">
+      <p class="eyebrow">{{ joinPage.eyebrow }}</p>
+      <h1>{{ joinPage.title }}</h1>
+      <p class="lede">{{ joinPage.intro }}</p>
+    </header>
+
+    <div class="join-grid">
+      <aside class="join-side">
+        <div class="panel fee">
+          <b>{{ joinPage.feeTitle }}</b>
+          <p>{{ joinPage.fee }}</p>
+        </div>
+        <div>
+          <h2 class="h-small" style="margin-bottom:16px">{{ joinPage.stepsTitle }}</h2>
+          <ol class="vsteps">{{#each home.join.steps}}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{/each}}</ol>
+        </div>
+      </aside>
+
+      <section class="form-card" aria-labelledby="forma">
+        <h2 id="forma">{{ joinPage.formTitle }}</h2>
+        <p class="form-note">{{ joinPage.required }}</p>
+
+        <form class="form" id="join-form" action="https://api.web3forms.com/submit" method="POST"
+              data-key="{{ site.web3formsKey }}" data-sending="{{ joinPage.sending }}"
+              data-error="{{ joinPage.error }}" data-not-configured="{{ joinPage.notConfigured }}"
+              data-required="{{ joinPage.requiredField }}" data-required-check="{{ joinPage.requiredCheck }}" data-invalid-email="{{ joinPage.invalidEmail }}">
+          <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+          <input type="hidden" name="subject" value="{{ joinPage.subject }}">
+          <input type="hidden" name="from_name" value="{{ meta.siteName }}">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field">
+            <label for="f-name">{{ joinPage.name }} <span class="req">*</span></label>
+            <input id="f-name" name="{{ joinPage.name }}" type="text" autocomplete="name" required>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-birth">{{ joinPage.birth }} <span class="req">*</span></label>
+              <input id="f-birth" name="{{ joinPage.birth }}" type="text" inputmode="numeric" maxlength="10" autocomplete="off"
+                     placeholder="{{ joinPage.datePlaceholder }}" data-date data-invalid="{{ joinPage.dateInvalid }}" aria-describedby="f-date-hint" required>
+            </div>
+            <div class="field">
+              <label for="f-ord">{{ joinPage.ordination }} <span class="req">*</span></label>
+              <input id="f-ord" name="{{ joinPage.ordination }}" type="text" inputmode="numeric" maxlength="10" autocomplete="off"
+                     placeholder="{{ joinPage.datePlaceholder }}" data-date data-invalid="{{ joinPage.dateInvalid }}" aria-describedby="f-date-hint" required>
+            </div>
+            <span class="hint" id="f-date-hint" style="grid-column: 1 / -1; margin-top: -10px">{{ joinPage.dateHint }}</span>
+          </div>
+          <div class="field">
+            <label for="f-parishes">{{ joinPage.parishes }} <span class="req">*</span></label>
+            <textarea id="f-parishes" name="{{ joinPage.parishes }}" aria-describedby="f-parishes-hint" required></textarea>
+            <span class="hint" id="f-parishes-hint">{{ joinPage.parishesHint }}</span>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-email">{{ joinPage.email }} <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">{{ joinPage.phone }} <span class="req">*</span></label>
+              <input id="f-phone" name="{{ joinPage.phone }}" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+          </div>
+
+          <label class="check"><input type="checkbox" id="f-statutes" name="Statūti" value="Apņemos ievērot" required><span>{{{ joinPage.agreeStatutes }}} <span class="req">*</span></span></label>
+          <label class="check"><input type="checkbox" id="f-privacy" name="Datu apstrāde" value="Izlasīta" required><span>{{{ joinPage.agreePrivacy }}} <span class="req">*</span></span></label>
+
+          <div class="form-msg err" id="form-msg" role="alert" hidden></div>
+          <div><button class="btn btn-pri" type="submit">{{ joinPage.submit }}</button></div>
+        </form>
+
+        <div class="form-ok" id="form-ok" role="status" hidden>
+          <h3>{{ joinPage.successTitle }}</h3>
+          <p>{{ joinPage.success }}</p>
+        </div>
+
+        <section class="privacy" id="datu-apstrade">
+          <h2>{{ joinPage.privacyTitle }}</h2>
+          <dl>{{#each joinPage.privacy}}<div><dt>{{ .term }}</dt><dd>{{ .text }}</dd></div>{{/each}}</dl>
+        </section>
+      </section>
+    </div>
+  </div>
+</main>
+{{> footer }}

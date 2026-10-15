@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "siteName": "Mācītāju atbalsta biedrība",
+    "since": "Kopš 2012",
+    "rights": "© 2012–2026 Mācītāju atbalsta biedrība"
+  },
+  "ui": {
+    "language": "Valoda",
+    "menu": "Izvēlne",
+    "skip": "Pāriet uz saturu",
+    "copy": "Kopēt",
+    "copied": "Nokopēts",
+    "copyFail": "Iezīmēts, nospied Ctrl+C",
+    "toc": "Saturs",
+    "draft": "Melnraksts"
+  },
+  "pages": {
+    "index": {
+      "title": "Mācītāju atbalsta biedrība",
+      "description": "LELB mācītāju pašpalīdzības kase. Biedri ik mēnesi ziedo kopīgā kasē, lai sniegtu praktisku atbalstu kolēģiem un viņu ģimenēm grūtā brīdī."
+    },
+    "statuti": {
+      "title": "Statūti · Mācītāju atbalsta biedrība",
+      "description": "Biedrības “Mācītāju atbalsta biedrība” statūti: mērķi, biedru tiesības un pienākumi, biedru sapulce, valde un biedra nauda."
+    },
+    "iestaties": {
+      "title": "Iestāties · Mācītāju atbalsta biedrība",
+      "description": "Pieteikums dalībai Mācītāju atbalsta biedrībā LELB mācītājiem un mācītāja pienākumu izpildītājiem."
+    }
+  },
+  "nav": [
+    { "label": "Sākums", "href": "index.html", "page": "index" },
+    { "label": "Statūti", "href": "statuti.html", "page": "statuti" },
+    { "label": "Kontakti", "href": "#kontakti" },
+    { "label": "Iestāties", "href": "iestaties.html", "page": "iestaties", "cta": true }
+  ],
+  "verse": {
+    "ref": "2. Korintiešiem 8:15",
+    "lead": "Kā ir rakstīts:",
+    "d1": "Kam bija daudz,",
+    "d2": "tas nekļuva pārbagāts,",
+    "m1": "kam bija maz,",
+    "m2": "tas nepalika tukšā.",
+    "pansA": "DAUDZ",
+    "pansB": "MAZ"
+  },
+  "home": {
+    "heroSub": "LELB mācītāju pašpalīdzības kase. Kopš 2012. gada biedri ik mēnesi ieliek nelielu daļu savu ienākumu kopīgā kasē, lai neviens kolēģis grūtā brīdī nepaliktu viens.",
+    "ctaJoin": "Iestāties biedrībā",
+    "ctaHelp": "Kā mēs palīdzam",
+    "about": {
+      "eyebrow": "Par biedrību",
+      "title": "Pašu mācītāju veidota apvienība",
+      "paragraphs": [
+        { "text": "Mācītāju atbalsta biedrība ir solidāra un demokrātiska apvienība, ko izveidojuši paši LELB mācītāji. Biedri ik mēnesi ziedo nelielu daļu savu ienākumu kopīgā kasē, un no tās tiek sniegta palīdzība biedriem un viņu ģimenēm." },
+        { "text": "Visus lēmumus par palīdzības formām pieņem biedru sapulce, un visiem biedriem ir vienādas tiesības. Biedrības darbu brīvprātīgi un bez atlīdzības vada trīs valdes locekļi no biedru vidus." },
+        { "text": "Līdzīgas pašpalīdzības kases darbojas daudzās luterāņu baznīcās, dažas jau vairāk nekā 100 gadu." }
+      ],
+      "facts": [
+        { "n": "2012", "label": "biedrība dibināta" },
+        { "n": "22", "label": "biedri" },
+        { "n": "10 €", "label": "biedra nauda mēnesī" },
+        { "n": "3", "label": "valdes locekļi kalpo bez atlīdzības" }
+      ]
+    },
+    "how": {
+      "eyebrow": "Kopīgā kase",
+      "title": "Kā tas darbojas",
+      "steps": [
+        { "title": "Biedri ziedo", "text": "Katrs biedrs maksā 10 € mēnesī. Tā ir mūsu kopīgā iemaksa kolēģu atbalstam." },
+        { "title": "Līdzekļi uzkrājas kopīgā kasē", "text": "Nauda glabājas biedrības kontā. Revidents finanses pārbauda vismaz reizi gadā, un pārskatu apstiprina biedru sapulce." },
+        { "title": "Kolēģis saņem palīdzību", "text": "Kad biedram vai viņa ģimenei vajadzīgs atbalsts, valde lemj par palīdzību no kopīgās kases." }
+      ]
+    },
+    "help": {
+      "eyebrow": "Palīdzība",
+      "title": "Kā mēs palīdzam",
+      "intro": "Biedrība sniedz sociālu, finansiālu un praktisku palīdzību saviem biedriem, emeritētiem garīdzniekiem un viņu ģimenes locekļiem.",
+      "items": [
+        { "title": "Finansiāls pabalsts", "text": "Vienreizējs pabalsts ārstniecības, zāļu iegādes, auto remonta un citu negaidītu rēķinu apmaksai." },
+        { "title": "Praktiska palīdzība", "text": "Atbalsts konkrētās dzīves situācijās, kur vairāk par naudu vajadzīgs kolēģa plecs un padoms." },
+        { "title": "Atbalsts ģimenēm", "text": "Pēc iespējām – palīdzība mācītāju ģimenēm un emeritētiem garīdzniekiem, kuri kalpojuši Baznīcā." }
+      ],
+      "askTitle": "Kā lūgt palīdzību",
+      "ask": "Sazinies ar kādu no valdes locekļiem pa tālruni vai raksti uz biedrības e-pastu. Katru lūgumu izskatām konfidenciāli.",
+      "askLink": "Valdes kontakti"
+    },
+    "join": {
+      "eyebrow": "Dalība",
+      "title": "Kā iestāties",
+      "who": "Biedrībā aicināts iestāties ikviens LELB mācītājs un mācītāja pienākumu izpildītājs, kurš vēlas atbalstīt kolēģus grūtībās.",
+      "steps": [
+        { "title": "Aizpildi pieteikumu", "text": "Norādi vārdu, dzimšanas datumu, ordinācijas datumu, draudzes, kurās kalpo, un kontaktus." },
+        { "title": "Valde izskata pieteikumu", "text": "Tuvākajā valdes sēdē, ne vēlāk kā divu nedēļu laikā. Lēmumu tev paziņosim nedēļas laikā." },
+        { "title": "Maksā biedra naudu", "text": "10 € mēnesī uz biedrības kontu. Tā ir tava daļa kopīgajā kasē." }
+      ],
+      "cta": "Aizpildīt pieteikumu",
+      "note": "Iestājoties tu apņemies ievērot biedrības <a href=\"statuti.html\">statūtus</a>."
+    }
+  },
+  "statutes": {
+    "eyebrow": "Biedrības “Mācītāju atbalsta biedrība”",
+    "title": "Statūti",
+    "intro": "Statūti nosaka biedrības mērķus, biedru tiesības un pienākumus, kā arī to, kā tiek pieņemti lēmumi un izlietoti kopīgās kases līdzekļi."
+  },
+  "joinPage": {
+    "eyebrow": "Pieteikums",
+    "title": "Iestāties biedrībā",
+    "intro": "Ja esi LELB mācītājs vai mācītāja pienākumu izpildītājs un gribi praktiski atbalstīt savus kolēģus grūtībās, esi sirsnīgi aicināts iestāties Mācītāju atbalsta biedrībā!",
+    "feeTitle": "10 € mēnesī",
+    "fee": "Biedra nauda ir mūsu kopīgais pienesums kolēģu atbalstam. Biedrības konta rekvizīti ir lapas apakšā.",
+    "stepsTitle": "Kas notiek pēc pieteikuma",
+    "formTitle": "Pieteikuma forma",
+    "required": "Ar * atzīmētie lauki ir obligāti.",
+    "name": "Vārds, uzvārds",
+    "birth": "Dzimšanas datums",
+    "ordination": "Ordinācijas datums",
+    "datePlaceholder": "dd.mm.gggg",
+    "dateHint": "Datumus raksti formātā dd.mm.gggg, piemēram, 15.03.1980.",
+    "dateInvalid": "Ievadi īstu datumu formātā dd.mm.gggg, piemēram, 15.03.1980.",
+    "requiredField": "Lūdzu, aizpildiet šo lauku.",
+    "requiredCheck": "Lūdzu, atzīmējiet šo rūtiņu.",
+    "invalidEmail": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+    "parishes": "Draudzes, kurās kalpo",
+    "parishesHint": "Ja kalpo vairākās draudzēs, uzskaiti visas.",
+    "email": "E-pasts",
+    "phone": "Telefons",
+    "agreeStatutes": "Esmu iepazinies ar biedrības <a href=\"statuti.html\">statūtiem</a> un apņemos tos ievērot.",
+    "agreePrivacy": "Esmu izlasījis <a href=\"#datu-apstrade\">informāciju par datu apstrādi</a>.",
+    "submit": "Vēlos iestāties biedrībā!",
+    "sending": "Sūta…",
+    "subject": "Jauns pieteikums Mācītāju atbalsta biedrībā",
+    "successTitle": "Paldies! Pieteikums nosūtīts.",
+    "success": "Valde to izskatīs tuvākajā sēdē, ne vēlāk kā divu nedēļu laikā, un sazināsies ar tevi.",
+    "error": "Neizdevās nosūtīt pieteikumu. Pārbaudi interneta savienojumu un mēģini vēlreiz vai raksti uz macitajubiedriba@gmail.com.",
+    "notConfigured": "Forma vēl nav pieslēgta e-pastam (src/site.json trūkst Web3Forms atslēgas). Pieteikums netika nosūtīts.",
+    "privacyTitle": "Datu apstrāde",
+    "privacy": [
+      { "term": "Pārzinis", "text": "Biedrība “Mācītāju atbalsta biedrība”, reģ. Nr. 40008202764, Brīvības laukums 1, Tukums, LV-3101, e-pasts macitajubiedriba@gmail.com." },
+      { "term": "Kādus datus vācam", "text": "Vārdu, uzvārdu, dzimšanas datumu, ordinācijas datumu, draudzes, kurās kalpo, e-pastu un tālruņa numuru." },
+      { "term": "Kāpēc", "text": "Lai valde varētu izskatīt tavu pieteikumu, sazināties ar tevi un uzturēt biedru sarakstu, kā to paredz biedrības statūti un Biedrību un nodibinājumu likums." },
+      { "term": "Kas saņem datus", "text": "Tikai biedrības valde. Pieteikums tiek nosūtīts uz biedrības e-pastu ar formu pakalpojuma Web3Forms starpniecību. Datus nenododam citām personām un neizmantojam citiem mērķiem." },
+      { "term": "Cik ilgi glabājam", "text": "Kamēr esi biedrības biedrs. Ja pieteikums tiek noraidīts vai tu izstājies no biedrības, datus dzēšam, ja vien to glabāšanu neprasa likums." },
+      { "term": "Tavas tiesības", "text": "Tu vari pieprasīt piekļuvi saviem datiem, to labošanu vai dzēšanu, rakstot uz macitajubiedriba@gmail.com. Tev ir arī tiesības iesniegt sūdzību Datu valsts inspekcijā (www.dvi.gov.lv)." }
+    ]
+  },
+  "footer": {
+    "contacts": "Kontakti",
+    "board": "Valde",
+    "req": "Rekvizīti",
+    "address": "Brīvības laukums 1, Tukums, LV-3101",
+    "email": "macitajubiedriba@gmail.com",
+    "people": [
+      { "name": "Justs Junkulis", "phone": "+371 29 397 863", "tel": "+37129397863" },
+      { "name": "Agris Sutra", "phone": "+371 29 243 697", "tel": "+37129243697" },
+      { "name": "Mārcis Zeiferts", "phone": "+371 29 145 305", "tel": "+37129145305" }
+    ],
+    "regLabel": "Reģ. Nr.",
+    "reg": "40008202764",
+    "bankLabel": "Banka",
+    "bank": "AS Swedbank",
+    "ibanLabel": "Konts biedru iemaksām un ziedojumiem",
+    "iban": "LV25HABA0551035754058",
+    "ibanPretty": "LV25 HABA 0551 0357 5405 8"
+  }
+}

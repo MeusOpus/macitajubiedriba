@@ -1,0 +1,518 @@
+<title>Mācītāju biedrība mockups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,300;1,7..72,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Alegreya+Sans:wght@400;500;700&family=Spectral:ital,wght@0,300;0,400;1,300&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Mockup chrome on top, three self-contained site variants below. Each variant commits to one light look
+   (a real website mockup), so colors are set explicitly per variant rather than following the viewer theme. */
+:root {
+  --chrome-bg: #17171C;
+  --chrome-fg: #EDEDF2;
+  --chrome-muted: #A3A3B2;
+  --chrome-on: #FFFFFF;
+  --chrome-on-fg: #17171C;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--chrome-bg); color: var(--chrome-fg); margin: 0; }
+a { color: inherit; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid #E0A526; outline-offset: 3px; }
+
+/* ---------- mockup chrome ---------- */
+.chrome { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--chrome-bg); color: var(--chrome-fg);
+  font: 500 13px/1.3 'IBM Plex Sans', system-ui, sans-serif; border-bottom: 1px solid #2C2C35; }
+.chrome-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.chrome-t { color: var(--chrome-muted); letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { background: transparent; color: var(--chrome-fg); border: 1px solid #3A3A45; border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--chrome-on); color: var(--chrome-on-fg); border-color: var(--chrome-on); }
+.chrome-note { color: var(--chrome-muted); margin-left: auto; font-size: 12px; }
+@media (max-width: 760px) { .chrome-note { display: none; } }
+
+/* ---------- shared site skeleton ---------- */
+.site { min-height: 60vh; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.site h1, .site h2, .site h3 { margin: 0; text-wrap: balance; }
+.site p { margin: 0; }
+.site ol, .site ul { margin: 0; padding: 0; list-style: none; }
+.hd-in { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; margin-right: auto; }
+.brand svg { width: 44px; height: 44px; flex: none; }
+.brand b { display: block; font-weight: 600; line-height: 1.2; }
+.brand small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
+.site nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.site nav a { text-decoration: none; padding-block: 6px; border-bottom: 2px solid transparent; }
+.lang { display: flex; gap: 2px; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+.lang button { background: none; border: 1px solid transparent; padding: 4px 7px; border-radius: 4px; cursor: pointer; color: inherit; }
+.lang button[aria-pressed="true"] { border-color: currentColor; }
+.lang button:disabled { opacity: .4; cursor: not-allowed; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; font-weight: 600; text-decoration: none; cursor: pointer; border: 1.5px solid transparent; font-size: 16px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.sec { padding-block: 72px; }
+.sec-hd { display: grid; gap: 10px; margin-bottom: 36px; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+.lede { font-size: 18px; line-height: 1.6; max-width: 62ch; }
+.prose { display: grid; gap: 16px; max-width: 64ch; font-size: 17px; line-height: 1.65; }
+.about-in { display: grid; gap: 48px; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; align-content: start; }
+.facts div { display: grid; gap: 4px; }
+.facts dt { font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.facts dd { margin: 0; font-size: 14px; line-height: 1.4; }
+@media (min-width: 860px) { .about-in { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+.steps { display: grid; gap: 28px; counter-reset: s; }
+.steps li { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.steps h3 { font-size: 20px; }
+.steps p { line-height: 1.6; }
+.cards { display: grid; gap: 20px; }
+@media (min-width: 760px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card h3 { font-size: 20px; }
+.card p { line-height: 1.6; }
+.ask { margin-top: 28px; display: grid; gap: 10px; padding: 28px; }
+.ask h3 { font-size: 20px; }
+.ask p { line-height: 1.6; max-width: 62ch; }
+.draft { display: inline-block; justify-self: start; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 4px 10px; border: 1.5px dashed currentColor; border-radius: 4px; }
+.join-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 36px; }
+.join-foot p { font-size: 15px; }
+.ft { padding-block: 56px 32px; font-size: 15px; line-height: 1.6; }
+.ft-grid { display: grid; gap: 36px; }
+@media (min-width: 820px) { .ft-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); } }
+.ft h4 { margin: 0 0 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.ft dl { margin: 0; display: grid; gap: 6px; }
+.ft dl div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
+.ft dd { margin: 0; font-variant-numeric: tabular-nums; }
+.iban { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 10px; }
+.iban code { font: 500 15px/1.4 'IBM Plex Sans', system-ui, sans-serif; letter-spacing: .04em; font-variant-numeric: tabular-nums; user-select: all; }
+.copy { background: none; border: 1px solid currentColor; color: inherit; font-size: 13px; padding: 4px 10px; border-radius: 4px; cursor: pointer; }
+.ft-bottom { margin-top: 40px; padding-top: 20px; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.illus-cap { font-size: 13px; line-height: 1.5; max-width: 34ch; }
+
+/* =====================================================================
+   A · Savienotie trauki — cool water blues, Literata verse + Commissioner UI
+   ===================================================================== */
+.v-a { --bg: #F3F7F9; --surface: #FFFFFF; --ink: #10263D; --muted: #4A5F73; --accent: #1C6A8E; --water: #3B8DB4; --water-soft: #DCECF3; --line: #D4DFE7;
+  --display: 'Literata', Georgia, serif; --ui: 'Commissioner', system-ui, sans-serif;
+  background: var(--bg); color: var(--ink); font-family: var(--ui); }
+.v-a .hd { background: var(--surface); border-bottom: 1px solid var(--line); }
+.v-a .brand b { font-size: 17px; }
+.v-a .brand small, .v-a .muted { color: var(--muted); }
+.v-a nav a { font-size: 15px; color: var(--ink); }
+.v-a nav a:hover { border-color: var(--water); }
+.v-a .hero { padding-block: 72px 64px; }
+.v-a .hero-in { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 860px) { .v-a .hero-in { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 56px; } }
+.v-a .ref { color: var(--accent); }
+.v-a .verse { margin: 16px 0 24px; font-family: var(--display); font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.16; letter-spacing: -.01em; }
+.v-a .verse .lead { display: block; font-size: .42em; font-style: italic; color: var(--muted); margin-bottom: 10px; letter-spacing: 0; }
+.v-a .verse .l1, .v-a .verse .l2 { display: block; }
+.v-a .verse .l2 { color: var(--accent); }
+.v-a .sub { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 52ch; margin-bottom: 28px; }
+.v-a .btn.pri { background: var(--ink); color: #fff; border-radius: 8px; }
+.v-a .btn.pri:hover { background: var(--accent); }
+.v-a .btn.sec { border-color: var(--ink); color: var(--ink); border-radius: 8px; }
+.v-a .hero-art { display: grid; gap: 12px; justify-items: center; }
+.v-a .hero-art svg { width: 100%; max-width: 360px; height: auto; }
+.v-a .illus-cap { color: var(--muted); text-align: center; }
+.v-a .wl, .v-a .wr { transform-box: view-box; }
+.v-a .wl { animation: a-left 2.8s cubic-bezier(.45, 0, .2, 1) .5s backwards; }
+.v-a .wr { animation: a-right 2.8s cubic-bezier(.45, 0, .2, 1) .5s backwards; }
+@keyframes a-left { from { transform: translateY(-88px); } }
+@keyframes a-right { from { transform: translateY(58px); } }
+.v-a .about { background: var(--surface); border-block: 1px solid var(--line); }
+.v-a h2 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.2; }
+.v-a .eyebrow { color: var(--accent); }
+.v-a .facts dt { font-family: var(--display); font-weight: 300; color: var(--accent); }
+.v-a .facts dd { color: var(--muted); }
+.v-a .steps { position: relative; }
+@media (min-width: 760px) {
+  .v-a .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+  .v-a .steps::before { content: ""; position: absolute; left: 22px; right: 22px; top: 19px; height: 6px; border-radius: 3px; background: var(--water-soft); }
+}
+.v-a .steps li::before { counter-increment: s; content: counter(s); position: relative; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--water); color: #fff; font-weight: 600; margin-bottom: 8px; box-shadow: 0 0 0 6px var(--bg); }
+.v-a .join .steps li::before { box-shadow: 0 0 0 6px var(--surface); }
+.v-a .steps p, .v-a .card p, .v-a .ask p { color: var(--muted); }
+.v-a .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+.v-a .ask { background: var(--water-soft); border-radius: 12px; }
+.v-a .draft { color: var(--accent); }
+.v-a .join { background: var(--surface); border-top: 1px solid var(--line); }
+.v-a .ft { background: var(--ink); color: #E3ECF2; }
+.v-a .ft h4, .v-a .ft dt, .v-a .ft-bottom { color: #9DB4C6; }
+.v-a .ft-bottom { border-top: 1px solid #2A4058; }
+
+/* =====================================================================
+   B · Manna — linen, olive and wheat gold, Cormorant italic verse + Alegreya Sans
+   ===================================================================== */
+.v-b { --bg: #F0EFE4; --surface: #F8F7EF; --ink: #29291D; --muted: #5C5A45; --accent: #4D5A2A; --gold: #A47820; --soft: #E3DFC8; --line: #D3CDB2;
+  --display: 'Cormorant Garamond', 'Times New Roman', serif; --ui: 'Alegreya Sans', system-ui, sans-serif;
+  background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 17px; }
+.v-b .hd { border-bottom: 1px solid var(--line); }
+.v-b .hd-in { flex-direction: column; gap: 14px; padding-block: 22px 14px; }
+.v-b .brand { margin-right: 0; flex-direction: column; text-align: center; gap: 8px; }
+.v-b .brand svg { width: 52px; height: 52px; }
+.v-b .brand b { font-family: var(--display); font-size: 26px; font-weight: 600; }
+.v-b .brand small { color: var(--gold); }
+.v-b .hd-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 24px; }
+.v-b nav { justify-content: center; }
+.v-b nav a { color: var(--ink); font-size: 16px; }
+.v-b nav a:hover { border-color: var(--gold); }
+.v-b .hero { padding-block: 64px 72px;
+  background-image: radial-gradient(circle at 1px 1px, var(--line) 1.2px, transparent 1.6px); background-size: 26px 26px; }
+.v-b .hero-in { display: grid; gap: 40px; align-items: end; }
+@media (min-width: 900px) { .v-b .hero-in { grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); } }
+.v-b .ref { color: var(--gold); }
+.v-b .verse { margin: 18px 0 28px; font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(38px, 6vw, 80px); line-height: 1.02; letter-spacing: -.01em; }
+.v-b .verse .lead { display: block; font-style: normal; font-family: var(--ui); font-size: 17px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.v-b .verse .l1 { display: block; }
+.v-b .verse .l2 { display: block; color: var(--accent); }
+.v-b .sub { font-size: 19px; line-height: 1.6; color: var(--muted); max-width: 54ch; margin-bottom: 28px; }
+.v-b .btn.pri { background: var(--accent); color: #F6F4E8; border-radius: 999px; }
+.v-b .btn.pri:hover { background: #3C4720; }
+.v-b .btn.sec { color: var(--accent); border-color: var(--accent); border-radius: 999px; }
+.v-b .hero-art { display: grid; gap: 10px; justify-items: center; }
+.v-b .hero-art svg { width: 100%; max-width: 250px; height: auto; }
+.v-b .illus-cap { color: var(--muted); text-align: center; font-style: italic; }
+.v-b .g { transform-box: view-box; animation: b-fall 1.8s cubic-bezier(.3, 0, .4, 1) var(--d, 0s) backwards; }
+@keyframes b-fall { from { transform: translateY(-70px); opacity: 0; } }
+.v-b h2 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; }
+.v-b .eyebrow { color: var(--gold); }
+.v-b .about { background: var(--surface); }
+.v-b .facts dt { font-family: var(--display); font-weight: 600; color: var(--accent); font-size: 48px; }
+.v-b .facts dd { color: var(--muted); }
+.v-b .steps { max-width: 680px; gap: 0; }
+.v-b .steps li { position: relative; padding: 0 0 32px 52px; border-left: 2px dotted var(--gold); margin-left: 13px; }
+.v-b .steps li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.v-b .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: -15px; top: -4px; width: 28px; height: 36px; border-radius: 50% / 55%;
+  background: var(--gold); color: #FFF9E8; display: grid; place-items: center; font-weight: 700; font-size: 15px; transform: rotate(-12deg); }
+.v-b .steps h3, .v-b .card h3, .v-b .ask h3 { font-family: var(--display); font-weight: 600; font-size: 26px; }
+.v-b .steps p, .v-b .card p, .v-b .ask p { color: var(--muted); }
+.v-b .cards { gap: 0; }
+.v-b .card { padding: 4px 0 24px; border-top: 1px solid var(--line); padding-top: 20px; }
+@media (min-width: 760px) { .v-b .card { padding: 20px 28px 8px; border-top: 0; border-left: 1px solid var(--line); } .v-b .card:first-child { border-left: 0; padding-left: 0; } }
+.v-b .ask { background: var(--soft); }
+.v-b .draft { color: var(--gold); }
+.v-b .join { background: var(--accent); color: #F4F2E4; }
+.v-b .join h2, .v-b .join .steps h3 { color: #FFFDF2; }
+.v-b .join .eyebrow { color: #E2C77E; }
+.v-b .join .lede, .v-b .join .steps p, .v-b .join .join-foot p { color: #D9DCC4; }
+.v-b .join .steps li { border-left-color: #C9A85A; }
+.v-b .join .steps li:last-child { border-left-color: transparent; }
+.v-b .join .btn.pri { background: #E2C77E; color: #29291D; }
+.v-b .join .btn.pri:hover { background: #F0D998; }
+.v-b .join a.inl { color: #F4F2E4; }
+.v-b .ft { background: var(--soft); }
+.v-b .ft h4, .v-b .ft dt, .v-b .ft-bottom { color: var(--muted); }
+.v-b .ft-bottom { border-top: 1px solid var(--line); }
+
+/* =====================================================================
+   C · Līdzsvars — paper white, liturgical violet, Spectral + IBM Plex Sans
+   ===================================================================== */
+.v-c { --bg: #FAF9FB; --surface: #FFFFFF; --ink: #1D1A25; --muted: #5D586A; --accent: #4A2C6B; --soft: #EEE8F4; --line: #DEDAE5;
+  --display: 'Spectral', Georgia, serif; --ui: 'IBM Plex Sans', system-ui, sans-serif;
+  background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; }
+.v-c .hd { border-bottom: 1px solid var(--line); }
+.v-c .brand b { font-family: var(--display); font-weight: 400; font-size: 19px; }
+.v-c .brand small { color: var(--muted); }
+.v-c nav a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+.v-c nav a:hover { border-color: var(--accent); }
+.v-c .hero { padding-block: 48px 72px; text-align: center; }
+.v-c .beam-svg { width: 100%; max-width: 560px; height: auto; display: block; margin: 0 auto 8px; }
+.v-c .beam { transform-box: view-box; transform-origin: 300px 40px; animation: c-level 3s cubic-bezier(.3, 1.35, .5, 1) .4s backwards; }
+@keyframes c-level { from { transform: rotate(-8deg); } }
+.v-c .verse { margin: 0; font-family: var(--display); font-weight: 300; font-size: clamp(28px, 4.2vw, 52px); line-height: 1.18; }
+.v-c .verse .lead { display: block; font-family: var(--ui); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.v-c .split { display: grid; gap: 20px; justify-items: center; }
+.v-c .split .half { display: block; }
+.v-c .split .half span { display: block; }
+.v-c .split .rule { width: 64px; height: 1px; background: var(--accent); }
+.v-c .split .h2x { font-style: italic; color: var(--accent); }
+@media (min-width: 760px) {
+  .v-c .split { grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr); gap: 0 40px; align-items: stretch; }
+  .v-c .split .half:first-child { text-align: right; justify-self: end; }
+  .v-c .split .half:last-child { text-align: left; justify-self: start; }
+  .v-c .split .rule { width: 1px; height: auto; }
+}
+.v-c .ref { margin-top: 28px; color: var(--accent); }
+.v-c .sub { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 56ch; margin: 20px auto 28px; }
+.v-c .ctas { justify-content: center; }
+.v-c .btn.pri { background: var(--accent); color: #fff; border-radius: 2px; }
+.v-c .btn.pri:hover { background: #351E50; }
+.v-c .btn.sec { border-color: var(--ink); color: var(--ink); border-radius: 2px; }
+.v-c .sec { border-top: 1px solid var(--line); }
+@media (min-width: 900px) {
+  .v-c .sec > .wrap { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0 56px; }
+  .v-c .sec-hd { align-content: start; margin-bottom: 0; }
+}
+.v-c .sec-body { min-width: 0; }
+.v-c h2 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 3vw, 34px); line-height: 1.2; }
+.v-c .eyebrow { color: var(--accent); }
+.v-c .about-in { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1100px) { .v-c .about-in { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
+.v-c .facts dt { font-family: var(--display); font-weight: 300; font-size: 44px; color: var(--accent); }
+.v-c .facts dd { color: var(--muted); }
+.v-c .steps { gap: 0; }
+.v-c .steps li { grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; padding-block: 20px; border-top: 1px solid var(--line); }
+.v-c .steps li:first-child { border-top: 0; padding-top: 0; }
+.v-c .steps li::before { counter-increment: s; content: counter(s, upper-roman); grid-row: span 2; font-family: var(--display); font-weight: 300; font-size: 34px; line-height: 1; color: var(--accent); }
+.v-c .steps p, .v-c .card p, .v-c .ask p { color: var(--muted); }
+.v-c .card { border-top: 2px solid var(--ink); padding-top: 16px; }
+.v-c .card h3, .v-c .steps h3, .v-c .ask h3 { font-family: var(--display); font-weight: 400; font-size: 22px; }
+.v-c .ask { background: var(--soft); }
+.v-c .draft { color: var(--accent); }
+.v-c .join { background: var(--surface); }
+.v-c .ft { background: #2A1B3D; color: #ECE6F3; }
+.v-c .ft h4, .v-c .ft dt, .v-c .ft-bottom { color: #B9AECB; }
+.v-c .ft-bottom { border-top: 1px solid #44325C; }
+
+/* =====================================================================
+   D · A's palette, type, buttons and header (the site also carries .v-a)
+       + C's balance image and split verse
+   ===================================================================== */
+.v-d { --soft: var(--water-soft); }
+.v-d .hero { padding-block: 48px 72px; text-align: center; }
+.v-d .beam-svg { width: 100%; max-width: 560px; height: auto; display: block; margin: 0 auto 8px; }
+.v-d .beam { transform-box: view-box; transform-origin: 300px 40px; animation: c-level 3s cubic-bezier(.3, 1.35, .5, 1) .4s backwards; }
+.v-d .verse { margin: 0; }
+.v-d .verse .lead { font-size: 18px; margin-bottom: 24px; }
+.v-d .split { display: grid; gap: 20px; justify-items: center; }
+.v-d .split .half, .v-d .split .half span { display: block; }
+.v-d .split .rule { width: 64px; height: 1px; background: var(--water); }
+.v-d .split .h2x { font-style: italic; color: var(--accent); }
+@media (min-width: 760px) {
+  .v-d .split { grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr); gap: 0 40px; align-items: stretch; }
+  .v-d .split .half:first-child { text-align: right; justify-self: end; }
+  .v-d .split .half:last-child { text-align: left; justify-self: start; }
+  .v-d .split .rule { width: 1px; height: auto; }
+}
+.v-d .ref { margin-top: 28px; }
+.v-d .sub { margin: 20px auto 28px; }
+.v-d .ctas { justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) { .wl, .wr, .g, .beam { animation: none !important; } }
+</style>
+
+<div class="chrome" role="navigation" aria-label="Mockup variants">
+  <div class="chrome-in">
+    <span class="chrome-t">Home page mockups</span>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-a" data-v="a" aria-selected="true">A · Savienotie trauki</button>
+      <button role="tab" id="tab-b" data-v="b" aria-selected="false">B · Manna</button>
+      <button role="tab" id="tab-c" data-v="c" aria-selected="false">C · Līdzsvars</button>
+      <button role="tab" id="tab-d" data-v="d" aria-selected="false">D · A + C</button>
+    </div>
+    <span class="chrome-note">All text comes from one translation table, ready for EN later</span>
+  </div>
+</div>
+<main id="stage"></main>
+
+<script>
+// All visible site text lives here. Adding English later = adding an `en` object with the same keys.
+const STR = {
+  lv: {
+    name: 'Mācītāju atbalsta biedrība',
+    since: 'Kopš 2012',
+    nav: [['Sākums', 'top'], ['Kā palīdzam', 'help'], ['Iestāties', 'join'], ['Statūti', 'join'], ['Kontakti', 'contacts']],
+    langLabel: 'Valoda', enSoon: 'EN versija drīzumā',
+    verseRef: '2. Korintiešiem 8:15',
+    verseLead: 'Kā ir rakstīts:',
+    d1: 'Kam bija daudz,', d2: 'tas nekļuva pārbagāts,',
+    m1: 'kam bija maz,', m2: 'tas nepalika tukšā.',
+    heroSub: 'LELB mācītāju pašpalīdzības kase. Kopš 2012. gada biedri ik mēnesi ieliek nelielu daļu savu ienākumu kopīgā kasē, lai neviens kolēģis grūtā brīdī nepaliktu viens.',
+    ctaJoin: 'Iestāties biedrībā', ctaHelp: 'Kā mēs palīdzam',
+    artA: 'Savienotajos traukos ūdens līmenis vienmēr izlīdzinās.',
+    artB: 'Katrs savāca tik, cik vajadzēja. 2. Mozus 16:18',
+    pansA: 'daudz', pansB: 'maz',
+    aboutEyebrow: 'Par biedrību',
+    aboutTitle: 'Pašu mācītāju veidota apvienība',
+    about: [
+      'Mācītāju atbalsta biedrība ir solidāra un demokrātiska apvienība, ko izveidojuši paši LELB mācītāji. Biedri ik mēnesi ziedo nelielu daļu savu ienākumu kopīgā kasē, un no tās tiek sniegta palīdzība biedriem un viņu ģimenēm.',
+      'Visus lēmumus par palīdzības formām pieņem biedru sapulce, un visiem biedriem ir vienādas tiesības. Līdzīgas pašpalīdzības kases darbojas daudzās luterāņu baznīcās, dažas jau vairāk nekā 100 gadu.'
+    ],
+    facts: [['2012', 'biedrība dibināta'], ['21', 'biedrs'], ['10 €', 'biedra nauda mēnesī'], ['3', 'valdes locekļi kalpo bez atlīdzības']],
+    howEyebrow: 'Kopīgā kase',
+    howTitle: 'Kā tas darbojas',
+    how: [
+      ['Biedri ziedo', 'Katrs biedrs maksā 10 € mēnesī. Tā ir mūsu kopīgā iemaksa kolēģu atbalstam.'],
+      ['Līdzekļi uzkrājas kopīgā kasē', 'Nauda glabājas biedrības kontā. Revidents finanses pārbauda vismaz reizi gadā, un pārskatu apstiprina biedru sapulce.'],
+      ['Kolēģis saņem palīdzību', 'Kad biedram vai viņa ģimenei vajadzīgs atbalsts, valde lemj par palīdzību no kopīgās kases.']
+    ],
+    helpEyebrow: 'Palīdzība',
+    helpTitle: 'Kā mēs palīdzam',
+    helpIntro: 'Biedrība sniedz sociālu, finansiālu un praktisku palīdzību saviem biedriem, emeritētiem garīdzniekiem un viņu ģimenes locekļiem.',
+    draft: 'Melnraksts: palīdzības veidi jāprecizē',
+    help: [
+      ['Finansiāls atbalsts', 'Vienreizējs pabalsts grūtā situācijā, piemēram, slimības, nelaimes vai tuvinieka nāves gadījumā.'],
+      ['Praktiska palīdzība', 'Atbalsts konkrētās dzīves situācijās, kur vairāk par naudu vajadzīgs kolēģa plecs un padoms.'],
+      ['Atbalsts ģimenēm', 'Palīdzība mācītāju ģimenēm un emeritētiem garīdzniekiem, kuri kalpojuši Baznīcā.']
+    ],
+    askTitle: 'Kā lūgt palīdzību',
+    ask: 'Sazinies ar kādu no valdes locekļiem pa tālruni vai raksti uz biedrības e-pastu. Katru lūgumu izskatām konfidenciāli.',
+    joinEyebrow: 'Dalība',
+    joinTitle: 'Kā iestāties',
+    joinWho: 'Biedrībā aicināts iestāties ikviens LELB mācītājs un mācītāja pienākumu izpildītājs, kurš vēlas atbalstīt kolēģus grūtībās.',
+    join: [
+      ['Aizpildi pieteikumu', 'Norādi vārdu, dzimšanas datumu, ordinācijas datumu, draudzes, kurās kalpo, un kontaktus.'],
+      ['Valde izskata pieteikumu', 'Tuvākajā valdes sēdē, ne vēlāk kā divu nedēļu laikā. Lēmumu tev paziņosim nedēļas laikā.'],
+      ['Maksā biedra naudu', '10 € mēnesī uz biedrības kontu. Tā ir tava daļa kopīgajā kasē.']
+    ],
+    joinCta: 'Aizpildīt pieteikumu',
+    joinNote: 'Iestājoties tu apņemies ievērot biedrības', joinNoteLink: 'statūtus',
+    contacts: 'Kontakti', board: 'Valde', req: 'Rekvizīti',
+    address: 'Brīvības laukums 1, Tukums, LV-3101',
+    email: 'macitajubiedriba@gmail.com',
+    people: [['Justs Junkulis', '+371 29 397 863'], ['Agris Sutra', '+371 29 243 697'], ['Mārcis Zeiferts', '+371 29 145 305']],
+    regLabel: 'Reģ. Nr.', reg: '40008202764',
+    bankLabel: 'Banka', bank: 'AS Swedbank',
+    ibanLabel: 'Konts biedru iemaksām un ziedojumiem',
+    iban: 'LV25HABA0551035754058',
+    copy: 'Kopēt', copied: 'Nokopēts', copyFail: 'Iezīmēts, nospied Ctrl+C',
+    rights: '© 2012–2026 Mācītāju atbalsta biedrība'
+  }
+};
+const L = STR.lv;
+
+// ---------- logo concepts ----------
+const logoA = `<svg viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="la"><path d="M8 8 V34 a6 6 0 0 0 6 6 H34 a6 6 0 0 0 6 -6 V8 Z"/></clipPath></defs>
+  <rect x="0" y="23" width="48" height="25" fill="var(--water)" clip-path="url(#la)"/>
+  <path d="M8 8 V34 a6 6 0 0 0 6 6 H34 a6 6 0 0 0 6 -6 V8 M24 8 V31" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const logoB = `<svg viewBox="0 0 48 48" aria-hidden="true">
+  <ellipse cx="17" cy="10" rx="2" ry="3" transform="rotate(-20 17 10)" fill="var(--gold)"/><ellipse cx="24" cy="6" rx="2" ry="3" fill="var(--gold)"/>
+  <ellipse cx="31" cy="10" rx="2" ry="3" transform="rotate(20 31 10)" fill="var(--gold)"/><ellipse cx="24" cy="13" rx="2" ry="3" transform="rotate(8 24 13)" fill="var(--gold)"/>
+  <rect x="7" y="17" width="34" height="4" rx="2" fill="var(--accent)"/><path d="M10 21 H38 L35.5 35 a7 7 0 0 1 -7 6 H19.5 a7 7 0 0 1 -7 -6 Z" fill="var(--accent)"/></svg>`;
+const logoC = `<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
+  <path d="M24 4 V42 M16 42 H32 M6 14 H42"/><path d="M6 14 L3 26 M6 14 L9 26 M42 14 L39 26 M42 14 L45 26" stroke-width="1.2"/>
+  <path d="M2 26 H10 A4 3 0 0 1 2 26 Z M38 26 H46 A4 3 0 0 1 38 26 Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.2"/></svg>`;
+
+// ---------- hero illustrations ----------
+const artA = `<svg viewBox="0 0 330 250" role="img" aria-label="${L.artA}">
+  <defs><clipPath id="va"><path d="M40 20 V216 a14 14 0 0 0 14 14 H276 a14 14 0 0 0 14 -14 V80 H190 V196 H110 V20 Z"/></clipPath></defs>
+  <g clip-path="url(#va)">
+    <rect class="wl" x="40" y="132" width="150" height="120" fill="var(--water)"/>
+    <rect class="wr" x="190" y="132" width="100" height="120" fill="var(--water)"/>
+  </g>
+  <path d="M40 20 V216 a14 14 0 0 0 14 14 H276 a14 14 0 0 0 14 -14 V80 M190 80 V196 H110 V20" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M296 132 H316" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M14 132 H34" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 4"/></svg>`;
+
+const grains = [[96,40,.2],[140,18,.35],[178,58,.5],[118,96,.65],[160,118,.8],[104,140,.95],[196,104,1.1]]
+  .map(([x,y,d],i)=>`<ellipse class="g" style="--d:${d}s" cx="${x}" cy="${y}" rx="5" ry="8" transform="rotate(${(i%2?18:-16)} ${x} ${y})" fill="var(--gold)"/>`).join('');
+const heap = [[92,166],[108,160],[124,156],[140,154],[156,156],[172,160],[188,166],[116,166],[132,163],[148,163],[164,166]]
+  .map(([x,y],i)=>`<ellipse cx="${x}" cy="${y}" rx="5" ry="8" transform="rotate(${(i%3-1)*35} ${x} ${y})" fill="var(--gold)"/>`).join('');
+const artB = `<svg viewBox="0 0 280 310" role="img" aria-label="${L.artB}">${grains}${heap}
+  <rect x="34" y="170" width="212" height="14" rx="7" fill="var(--accent)"/>
+  <path d="M44 184 H236 L222 268 a26 26 0 0 1 -26 22 H84 a26 26 0 0 1 -26 -22 Z" fill="var(--accent)"/>
+  <path d="M70 210 H210" stroke="#F0EFE4" stroke-opacity=".35" stroke-width="2"/></svg>`;
+
+const artC = `<svg class="beam-svg" viewBox="0 0 600 170" aria-hidden="true">
+  <path d="M300 8 V156 M266 156 H334" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <g class="beam">
+    <path d="M80 40 H520" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M80 40 L48 104 M80 40 L112 104 M520 40 L488 104 M520 40 L552 104" stroke="var(--ink)" stroke-width="1" fill="none"/>
+    <path d="M42 104 H118 A38 16 0 0 1 42 104 Z M482 104 H558 A38 16 0 0 1 482 104 Z" fill="var(--soft)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="80" y="146" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">${L.pansA.toUpperCase()}</text>
+    <text x="520" y="146" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">${L.pansB.toUpperCase()}</text>
+  </g></svg>`;
+
+// ---------- shared building blocks ----------
+const navHtml = () => `<nav aria-label="Galvenā navigācija">${L.nav.map(([t, k]) => `<a href="#" data-go="${k}">${t}</a>`).join('')}</nav>`;
+const langHtml = () => `<div class="lang" role="group" aria-label="${L.langLabel}"><button type="button" aria-pressed="true">LV</button><button type="button" disabled title="${L.enSoon}">EN</button></div>`;
+const secHd = (eb, title, lede) => `<header class="sec-hd"><p class="eyebrow">${eb}</p><h2>${title}</h2>${lede ? `<p class="lede">${lede}</p>` : ''}</header>`;
+const stepsHtml = arr => `<ol class="steps">${arr.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>`;
+
+const about = () => `<section class="sec about"><div class="wrap">${secHd(L.aboutEyebrow, L.aboutTitle)}
+  <div class="sec-body about-in"><div class="prose">${L.about.map(p => `<p>${p}</p>`).join('')}</div>
+  <dl class="facts">${L.facts.map(([n, t]) => `<div><dt>${n}</dt><dd>${t}</dd></div>`).join('')}</dl></div></div></section>`;
+const how = () => `<section class="sec how"><div class="wrap">${secHd(L.howEyebrow, L.howTitle)}<div class="sec-body">${stepsHtml(L.how)}</div></div></section>`;
+const help = () => `<section class="sec help" data-sec="help"><div class="wrap">${secHd(L.helpEyebrow, L.helpTitle, L.helpIntro)}
+  <div class="sec-body"><p class="draft" style="margin-bottom:20px">${L.draft}</p>
+  <div class="cards">${L.help.map(([h, p]) => `<article class="card"><h3>${h}</h3><p>${p}</p></article>`).join('')}</div>
+  <div class="ask"><h3>${L.askTitle}</h3><p>${L.ask}</p><p><strong>${L.email}</strong></p></div></div></div></section>`;
+const join = () => `<section class="sec join" data-sec="join"><div class="wrap">${secHd(L.joinEyebrow, L.joinTitle, L.joinWho)}
+  <div class="sec-body">${stepsHtml(L.join)}
+  <div class="join-foot"><a class="btn pri" href="#">${L.joinCta}</a><p>${L.joinNote} <a class="inl" href="#">${L.joinNoteLink}</a>.</p></div></div></div></section>`;
+const footer = logo => `<footer class="ft" data-sec="contacts"><div class="wrap"><div class="ft-grid">
+  <div><a class="brand" href="#" data-go="top">${logo}<span><b>${L.name}</b><small>${L.since}</small></span></a>
+    <p style="margin-top:16px;max-width:36ch">${L.address}<br>${L.email}</p></div>
+  <div><h4>${L.board}</h4><dl>${L.people.map(([n, t]) => `<div><dt>${n}</dt><dd>${t}</dd></div>`).join('')}</dl></div>
+  <div><h4>${L.req}</h4><dl><div><dt>${L.regLabel}</dt><dd>${L.reg}</dd></div><div><dt>${L.bankLabel}</dt><dd>${L.bank}</dd></div></dl>
+    <p style="margin-top:12px">${L.ibanLabel}</p>
+    <div class="iban"><code>${L.iban.replace(/(.{4})/g, '$1 ').trim()}</code><button class="copy" type="button" data-copy="${L.iban}">${L.copy}</button></div></div>
+  </div><div class="ft-bottom"><span>${L.rights}</span><span>${L.verseRef}</span></div></div></footer>`;
+
+const header = logo => `<header class="hd"><div class="wrap hd-in">
+  <a class="brand" href="#" data-go="top">${logo}<span><b>${L.name}</b><small>${L.since}</small></span></a>${navHtml()}${langHtml()}</div></header>`;
+const ctas = () => `<div class="ctas"><a class="btn pri" href="#" data-go="join">${L.ctaJoin}</a><a class="btn sec" href="#" data-go="help">${L.ctaHelp}</a></div>`;
+
+// ---------- the three variants ----------
+const siteA = () => `${header(logoA)}
+  <section class="hero" data-sec="top"><div class="wrap hero-in">
+    <div><p class="eyebrow ref">${L.verseRef}</p>
+      <blockquote class="verse"><span class="lead">${L.verseLead}</span><span class="l1">${L.d1} ${L.d2}</span><span class="l2">${L.m1} ${L.m2}</span></blockquote>
+      <p class="sub">${L.heroSub}</p>${ctas()}</div>
+    <figure class="hero-art" style="margin:0">${artA}<figcaption class="illus-cap">${L.artA}</figcaption></figure>
+  </div></section>${about()}${how()}${help()}${join()}${footer(logoA)}`;
+
+const siteB = () => `<header class="hd"><div class="wrap hd-in">
+    <a class="brand" href="#" data-go="top">${logoB}<span><b>${L.name}</b><small>${L.since}</small></span></a>
+    <div class="hd-row">${navHtml()}${langHtml()}</div></div></header>
+  <section class="hero" data-sec="top"><div class="wrap hero-in">
+    <div><p class="eyebrow ref">${L.verseRef}</p>
+      <blockquote class="verse"><span class="lead">${L.verseLead}</span><span class="l1">${L.d1} ${L.d2}</span><span class="l2">${L.m1} ${L.m2}</span></blockquote>
+      <p class="sub">${L.heroSub}</p>${ctas()}</div>
+    <figure class="hero-art" style="margin:0">${artB}<figcaption class="illus-cap">${L.artB}</figcaption></figure>
+  </div></section>${about()}${how()}${help()}${join()}${footer(logoB)}`;
+
+const siteC = () => `${header(logoC)}
+  <section class="hero" data-sec="top"><div class="wrap">${artC}
+    <blockquote class="verse"><span class="lead">${L.verseLead}</span>
+      <span class="split"><span class="half"><span>${L.d1}</span><span>${L.d2}</span></span><span class="rule" aria-hidden="true"></span><span class="half h2x"><span>${L.m1}</span><span>${L.m2}</span></span></span>
+    </blockquote>
+    <p class="eyebrow ref">${L.verseRef}</p><p class="sub">${L.heroSub}</p>${ctas()}
+  </div></section>${about()}${how()}${help()}${join()}${footer(logoC)}`;
+
+const siteD = () => `${header(logoC)}
+  <section class="hero" data-sec="top"><div class="wrap">${artC}
+    <blockquote class="verse"><span class="lead">${L.verseLead}</span>
+      <span class="split"><span class="half"><span>${L.d1}</span><span>${L.d2}</span></span><span class="rule" aria-hidden="true"></span><span class="half h2x"><span>${L.m1}</span><span>${L.m2}</span></span></span>
+    </blockquote>
+    <p class="eyebrow ref">${L.verseRef}</p><p class="sub">${L.heroSub}</p>${ctas()}
+  </div></section>${about()}${how()}${help()}${join()}${footer(logoC)}`;
+
+const VARIANTS = ['a', 'b', 'c', 'd'];
+const stage = document.getElementById('stage');
+stage.innerHTML = `<div class="site v-a" id="site-a">${siteA()}</div><div class="site v-b" id="site-b" hidden>${siteB()}</div><div class="site v-c" id="site-c" hidden>${siteC()}</div><div class="site v-a v-d" id="site-d" hidden>${siteD()}</div>`;
+
+function show(v) {
+  VARIANTS.forEach(k => {
+    document.getElementById('site-' + k).hidden = k !== v;
+    document.getElementById('tab-' + k).setAttribute('aria-selected', String(k === v));
+  });
+  try { localStorage.setItem('mab-variant', v); } catch (e) {}
+}
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => { show(b.dataset.v); window.scrollTo(0, 0); }));
+let start = (location.hash || '').slice(1);
+if (!VARIANTS.includes(start)) start = 'd';
+show(start);
+
+stage.addEventListener('click', e => {
+  const go = e.target.closest('[data-go]');
+  if (go) {
+    e.preventDefault();
+    const site = go.closest('.site');
+    const target = site.querySelector(`[data-sec="${go.dataset.go}"]`);
+    if (target) target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    return;
+  }
+  const a = e.target.closest('a[href="#"]');
+  if (a) e.preventDefault();
+  const c = e.target.closest('.copy');
+  if (c) {
+    const done = t => { c.textContent = t; setTimeout(() => { c.textContent = L.copy; }, 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(c.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done(L.copyFail); };
+    try { navigator.clipboard.writeText(c.dataset.copy).then(() => done(L.copied), fallback); } catch (err) { fallback(); }
+  }
+});
+</script>

@@ -1,0 +1,9 @@
+<a class="skip" href="#saturs">{{ ui.skip }}</a>
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="brand" href="index.html">{{> logo }}<span><b>{{ meta.siteName }}</b><small>{{ meta.since }}</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">{{ ui.menu }}</span></button>
+    <nav class="nav" id="nav">{{{ nav }}}</nav>
+    {{{ langSwitch }}}
+  </div>
+</header>
