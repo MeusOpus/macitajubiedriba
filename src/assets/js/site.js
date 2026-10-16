@@ -101,7 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!form.dataset.key) { msg.textContent = form.dataset.notConfigured; msg.hidden = false; return; }
       btn.disabled = true; btn.textContent = form.dataset.sending;
       try {
-        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        // Sent as JSON: with multipart form data Web3Forms garbles Latvian letters in the field names (ā → Ä)
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' }
+        });
         const data = await res.json();
         if (!res.ok || !data.success) throw new Error(data.message || res.status);
         form.hidden = true; ok.hidden = false; ok.scrollIntoView({ block: 'center' });
