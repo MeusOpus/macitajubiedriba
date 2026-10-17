@@ -107,6 +107,17 @@ def build():
         if (SRC / extra).exists():
             shutil.copy(SRC / extra, OUT / extra)
 
+    # Old addresses (e.g. from the Weebly site, still in search results) forward to the new pages
+    for old, new in site.get("redirects", {}).items():
+        target = html.escape(new)
+        (OUT / old).write_text(
+            '<!doctype html>\n<html lang="lv"><head><meta charset="utf-8">'
+            f'<meta http-equiv="refresh" content="0; url={target}">'
+            f'<link rel="canonical" href="{html.escape(site["url"] + new)}">'
+            '<meta name="robots" content="noindex">'
+            f'<title>Pārvietots</title></head><body><p>Lapa ir pārvietota: <a href="{target}">{target}</a></p></body></html>\n',
+            "utf-8")
+
     for lang in langs:
         t = json.loads((SRC / "i18n" / f"{lang}.json").read_text("utf-8"))
         prefix = "" if lang == default else f"{lang}/"
