@@ -84,9 +84,69 @@ a { color: var(--accent); text-underline-offset: 3px; }
 
 /* ---------- hero (home) ---------- */
 .hero { padding-block: 48px 72px; text-align: center; }
-.beam-svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 8px; }
-.beam { transform-box: view-box; transform-origin: 300px 40px; animation: level 3s cubic-bezier(.3, 1.35, .5, 1) .4s backwards; }
-@keyframes level { from { transform: rotate(-8deg); } }
+/* Balance: the "daudz" pan starts heavy, one marble crosses over the cross to the "maz" pan,
+   and the beam settles level. Pans counter-rotate so they always hang plumb.
+   Base styles are the final, balanced state; keyframes only describe the way there,
+   so reduced motion simply shows the balanced scale. */
+.beam-svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 12px; overflow: visible;
+  animation: bs-in .7s ease-out both; }
+.bs-stop-soft { stop-color: var(--water-soft); }
+.bs-stop-light { stop-color: #EAF5FA; }
+.bs-stop-water { stop-color: var(--water); }
+.bs-stop-accent { stop-color: var(--accent); }
+.bs-shadow { fill: var(--ink); opacity: .07; }
+.bs-stand, .bs-beam { fill: var(--ink); }
+.bs-pivot { fill: var(--bg); stroke: var(--ink); stroke-width: 2.5; }
+.bs-hook { fill: var(--bg); stroke: var(--ink); stroke-width: 1.5; }
+.bs-cord { fill: none; stroke: var(--ink); stroke-width: 1; stroke-linecap: round; opacity: .45; }
+.bs-pan-in { fill: var(--water); opacity: .22; }
+.bs-rim { fill: none; stroke: var(--water); stroke-width: 1.5; }
+.bs-marble { stroke: var(--accent); stroke-width: .6; stroke-opacity: .5; }
+.bs-swirl { fill: none; stroke: #fff; stroke-width: 1.1; stroke-linecap: round; opacity: .4; }
+.bs-label { font: 600 12px var(--ui); letter-spacing: .22em; text-anchor: middle; fill: var(--muted); }
+@media (max-width: 479px) { .bs-label { font-size: 19px; letter-spacing: .14em; } }
+
+.beam, .pan { animation: bs-settle 2.6s 1.7s both; }
+.pan { animation-name: bs-plumb; }
+.bs-leaving { animation: bs-hold .8s; opacity: 0; }
+.bs-fly-x { opacity: 0; animation: bs-fly-x .9s linear .8s; }
+.bs-fly-y { animation: bs-fly-y .9s .8s; }
+.bs-arriving { animation: bs-wait 1.7s, bs-land .4s cubic-bezier(.25, 1, .5, 1) 1.7s; }
+.bs-ripple { fill: none; stroke: var(--water); stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center;
+  animation: bs-ripple .9s ease-out 1.7s; }
+.bs-trail { fill: none; stroke: var(--water); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 0 7; opacity: 0;
+  animation: bs-trail 1.5s ease-in-out .75s; }
+
+@keyframes bs-in { from { opacity: 0; transform: translateY(8px); } }
+@keyframes bs-hold { 0%, 100% { opacity: 1; } }
+@keyframes bs-wait { 0%, 100% { opacity: 0; } }
+/* x is linear and y follows a parabola (apex at ~55%), so the marble flies a true arc matching .bs-trail */
+@keyframes bs-fly-x { from { opacity: 1; transform: translateX(0); } to { opacity: 1; transform: translateX(445.22px); } }
+@keyframes bs-fly-y {
+  0% { transform: translateY(0) scale(1); animation-timing-function: cubic-bezier(.33, .67, .67, 1); }
+  55.2% { transform: translateY(-117.25px) scale(1.08); animation-timing-function: cubic-bezier(.33, 0, .67, .33); }
+  100% { transform: translateY(-40.06px) scale(1); }
+}
+@keyframes bs-land { 40% { transform: translateY(-3.5px); animation-timing-function: cubic-bezier(.5, 0, .75, 0); } }
+@keyframes bs-ripple { from { opacity: .8; transform: scale(.4); } to { opacity: 0; transform: scale(2.4); } }
+@keyframes bs-trail { 0% { opacity: 0; } 30%, 55% { opacity: .55; } 100% { opacity: 0; } }
+/* damped swing: heavy left side down, released when the marble lands */
+@keyframes bs-settle {
+  0% { transform: rotate(-7deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  24% { transform: rotate(2.2deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  45% { transform: rotate(-1deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  64% { transform: rotate(.45deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  82% { transform: rotate(-.15deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  100% { transform: rotate(0); }
+}
+@keyframes bs-plumb {
+  0% { transform: rotate(7deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  24% { transform: rotate(-2.2deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  45% { transform: rotate(1deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  64% { transform: rotate(-.45deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  82% { transform: rotate(.15deg); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  100% { transform: rotate(0); }
+}
 .verse { margin: 0; font-family: var(--display); font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.16; letter-spacing: -.01em; }
 .verse-lead { display: block; margin-bottom: 24px; font-size: 18px; font-style: italic; color: var(--muted); letter-spacing: 0; }
 .split { display: grid; gap: 20px; justify-items: center; }
