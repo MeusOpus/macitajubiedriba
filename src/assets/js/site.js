@@ -47,22 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
     wide.addEventListener('change', sync);
     toc.addEventListener('click', e => { if (e.target.closest('a') && !wide.matches) toc.open = false; });
 
-    // Highlight the chapter being read: the last one whose heading has passed a line near the top of the screen.
-    // The last chapters are short and can never scroll that far up, so at the very bottom of the page
-    // the last chapter wins, and a chapter picked in the contents stays highlighted until the reader scrolls.
+    // Highlight the chapter being read. Each chapter gets a scroll position at which it becomes active:
+    // normally when its heading passes a line near the top of the screen. The last chapters are short and
+    // can never scroll that far up, so their positions are spread evenly over the last stretch of scrolling;
+    // that way every chapter lights up in turn and the last one is active at the very bottom.
+    // A chapter picked in the contents stays highlighted until the reader scrolls.
     const links = new Map([...toc.querySelectorAll('a')].map(a => [a.getAttribute('href').slice(1), a]));
     const chapters = [...document.querySelectorAll('.chapter')];
     const setActive = id => links.forEach((a, key) => a.classList.toggle('active', key === id));
+    const activationPoints = () => {
+      const line = Math.min(window.innerHeight * 0.3, 140);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const points = chapters.map(ch => ch.getBoundingClientRect().top + window.scrollY - line);
+      const first = points.findIndex(p => p > maxScroll);  // first chapter that can't reach the line
+      if (first !== -1) {
+        const from = first > 0 ? Math.max(points[first - 1], 0) : 0;
+        const count = points.length - first;
+        for (let i = first; i < points.length; i++) points[i] = from + (maxScroll - from) * (i - first + 1) / count;
+      }
+      return points;
+    };
     let picked = null;
     let queued = false;
     const update = () => {
       queued = false;
       if (picked) return;
-      const doc = document.documentElement;
-      if (window.scrollY + window.innerHeight >= doc.scrollHeight - 2) return setActive(chapters[chapters.length - 1].id);
-      const line = Math.min(window.innerHeight * 0.3, 140);
+      const points = activationPoints();
       let current = null;
-      chapters.forEach(ch => { if (ch.getBoundingClientRect().top <= line) current = ch; });
+      points.forEach((p, i) => { if (window.scrollY >= p - 1) current = chapters[i]; });
       setActive(current ? current.id : null);
     };
     window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
