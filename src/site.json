@@ -1,5 +1,10 @@
 {
   "languages": ["lv"],
-  "url": "https://www.macitajubiedriba.lv/",
+  "url": "https://macitajubiedriba.lv/",
+  "redirects": {
+    "stat363ti.html": "statuti.html",
+    "iest257ties.html": "iestaties.html",
+    "kontakti.html": "index.html#kontakti"
+  },
   "web3formsKey": "1db5630e-0709-4362-bda7-81c20f4afe2d"
 }

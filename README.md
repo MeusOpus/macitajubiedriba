@@ -49,11 +49,14 @@ The first language stays at the site root, and English goes to `/en/`. Once ther
 
 The workflow `.github/workflows/pages.yml` builds and deploys on every push to `main`. One-time setup in the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-### Using www.macitajubiedriba.lv
-1. Create the file `src/CNAME` containing just `www.macitajubiedriba.lv`.
-2. At the domain registrar, add these DNS records:
-   - `www` → `CNAME` → `meusopus.github.io`
-   - for the bare domain `macitajubiedriba.lv`, `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-3. In **Settings → Pages**, enter the custom domain and turn on **Enforce HTTPS** once the certificate is ready.
+### Domain: macitajubiedriba.lv
+The site's main address is the bare domain **macitajubiedriba.lv**, set in `src/CNAME`. `www.macitajubiedriba.lv` forwards to it automatically.
 
-Switch the DNS only after the new site works at `meusopus.github.io/<repo>`. The old Weebly site stays live until then.
+DNS records at the domain registrar (nic.lv):
+- `macitajubiedriba.lv`: four `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `www.macitajubiedriba.lv`: `CNAME` → `meusopus.github.io`
+
+In **Settings → Pages**, the custom domain is `macitajubiedriba.lv`. Turn on **Enforce HTTPS** once the certificate is ready. Web3Forms must allow `macitajubiedriba.lv` as a domain.
+
+### Old addresses
+Pages from the old Weebly site (`stat363ti.html`, `iest257ties.html`, `kontakti.html`) forward to the new ones. The list is in `src/site.json` → `redirects`.
