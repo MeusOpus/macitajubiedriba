@@ -127,5 +127,31 @@
     </div>
   </section>
 
+  <section class="sec sec-white" id="kontakti">
+    <div class="wrap">
+      <header class="sec-hd"><p class="eyebrow">{{ home.contacts.eyebrow }}</p><h2>{{ home.contacts.title }}</h2><p class="lede">{{ home.contacts.lede }}</p></header>
+      <div class="contact-grid">
+        <div class="c-card">
+          <h3>{{ home.contacts.board }}</h3>
+          <div class="people">{{#each footer.people}}<div class="person"><b>{{ .name }}</b><a href="tel:{{ .tel }}">{{ .phone }}</a></div>{{/each}}</div>
+        </div>
+        <div class="c-card">
+          <h3>{{ home.contacts.reach }}</h3>
+          <div class="c-line"><span>{{ home.contacts.emailLabel }}</span><a class="c-big" href="mailto:{{ footer.email }}">{{ footer.email }}</a></div>
+          <div class="c-line"><span>{{ home.contacts.addressLabel }}</span>{{ footer.address }}</div>
+        </div>
+        <div class="c-card c-panel">
+          <h3>{{ home.contacts.req }}</h3>
+          <dl>
+            <div><dt>{{ footer.nameLabel }}</dt><dd>{{ footer.legalName }}</dd></div>
+            <div><dt>{{ footer.regLabel }}</dt><dd>{{ footer.reg }}</dd></div>
+            <div><dt>{{ footer.bankLabel }}</dt><dd>{{ footer.bank }}</dd></div>
+            <div><dt>{{ footer.ibanLabel }}</dt><dd><div class="iban"><code>{{ footer.ibanPretty }}</code><button class="copy" type="button" data-copy="{{ footer.iban }}" data-done="{{ ui.copied }}" data-fail="{{ ui.copyFail }}">{{ ui.copy }}</button></div></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 {{> footer }}

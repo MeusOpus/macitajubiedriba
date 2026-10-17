@@ -1,5 +1,14 @@
 // Small enhancements; every page works without this file.
 document.addEventListener('DOMContentLoaded', () => {
+  // Arriving from another page with #anchor (e.g. index.html#kontakti): the browser's own jump is lost
+  // while web fonts load and smooth scrolling is on, so jump again once the layout has settled.
+  if (location.hash) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) {
+      const jump = () => target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(jump, 0));
+    }
+  }
   // Mobile menu
   const menuBtn = document.querySelector('.menu-btn');
   const nav = document.getElementById('nav');
@@ -38,16 +47,32 @@ document.addEventListener('DOMContentLoaded', () => {
     wide.addEventListener('change', sync);
     toc.addEventListener('click', e => { if (e.target.closest('a') && !wide.matches) toc.open = false; });
 
+    // Highlight the chapter being read: the last one whose heading has passed a line near the top of the screen.
+    // The last chapters are short and can never scroll that far up, so at the very bottom of the page
+    // the last chapter wins, and a chapter picked in the contents stays highlighted until the reader scrolls.
     const links = new Map([...toc.querySelectorAll('a')].map(a => [a.getAttribute('href').slice(1), a]));
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          links.forEach(a => a.classList.remove('active'));
-          links.get(en.target.id)?.classList.add('active');
-        }
-      });
-    }, { rootMargin: '0px 0px -70% 0px' });
-    document.querySelectorAll('.chapter').forEach(ch => io.observe(ch));
+    const chapters = [...document.querySelectorAll('.chapter')];
+    const setActive = id => links.forEach((a, key) => a.classList.toggle('active', key === id));
+    let picked = null;
+    let queued = false;
+    const update = () => {
+      queued = false;
+      if (picked) return;
+      const doc = document.documentElement;
+      if (window.scrollY + window.innerHeight >= doc.scrollHeight - 2) return setActive(chapters[chapters.length - 1].id);
+      const line = Math.min(window.innerHeight * 0.3, 140);
+      let current = null;
+      chapters.forEach(ch => { if (ch.getBoundingClientRect().top <= line) current = ch; });
+      setActive(current ? current.id : null);
+    };
+    window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    toc.addEventListener('click', e => {
+      const a = e.target.closest('a');
+      if (a) { picked = a.getAttribute('href').slice(1); setActive(picked); }
+    });
+    ['wheel', 'touchstart', 'keydown'].forEach(type => window.addEventListener(type, () => { picked = null; }, { passive: true }));
+    update();
   }
 
   // Date fields in Latvian format dd.mm.gggg. Accepts 1.3.1980, 01-03-1980, 01/03/1980 or 01031980 and tidies it up.
