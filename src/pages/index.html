@@ -4,14 +4,70 @@
 
   <section class="hero">
     <div class="wrap">
-      <svg class="beam-svg" viewBox="0 0 600 170" aria-hidden="true">
-        <path d="M300 8 V156 M266 156 H334" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
-        <g class="beam">
-          <path d="M80 40 H520" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-          <path d="M80 40 L48 104 M80 40 L112 104 M520 40 L488 104 M520 40 L552 104" stroke="var(--ink)" stroke-width="1" fill="none"/>
-          <path d="M42 104 H118 A38 16 0 0 1 42 104 Z M482 104 H558 A38 16 0 0 1 482 104 Z" fill="var(--water-soft)" stroke="var(--water)" stroke-width="1.5"/>
-          <text x="80" y="146" text-anchor="middle" font-family="Commissioner, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">{{ verse.pansA }}</text>
-          <text x="520" y="146" text-anchor="middle" font-family="Commissioner, sans-serif" font-size="13" letter-spacing="2" fill="var(--muted)">{{ verse.pansB }}</text>
+      <!-- Balance: the "daudz" pan starts heavy, one marble flies over the cross to the "maz" pan and the beam settles level.
+           Animation is in site.css (.bs-*); without motion the scale simply shows the balanced end state. -->
+      <svg class="beam-svg" viewBox="0 0 600 204" aria-hidden="true">
+        <defs>
+          <linearGradient id="bs-bowl" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" class="bs-stop-soft"/>
+            <stop offset="1" class="bs-stop-water"/>
+          </linearGradient>
+          <radialGradient id="bs-glass" cx=".38" cy=".34" r=".72">
+            <stop offset="0" class="bs-stop-light"/>
+            <stop offset=".45" class="bs-stop-water"/>
+            <stop offset="1" class="bs-stop-accent"/>
+          </radialGradient>
+          <symbol id="bs-m" overflow="visible">
+            <circle r="8" fill="url(#bs-glass)" class="bs-marble"/>
+            <path d="M-5.3 2.7 Q-.5 -1.8 5.5 -1.4" class="bs-swirl"/>
+            <ellipse cx="2.7" cy="4.5" rx="2.7" ry="1.2" transform="rotate(-25 2.7 4.5)" fill="#fff" opacity=".35"/>
+            <circle cx="-3" cy="-3.2" r="1.9" fill="#fff" opacity=".9"/>
+          </symbol>
+          <symbol id="bs-pan-back" overflow="visible">
+            <path class="bs-cord" d="M0 0 L-41 60 M0 0 L41 60"/>
+            <ellipse cx="0" cy="60" rx="44" ry="5" class="bs-pan-in"/>
+            <path d="M-44 60 A44 5 0 0 1 44 60" class="bs-rim"/>
+          </symbol>
+          <symbol id="bs-pan-front" overflow="visible">
+            <path d="M-44 60 A44 18 0 0 0 44 60 A44 5 0 0 1 -44 60 Z" fill="url(#bs-bowl)"/>
+            <path d="M44 60 A44 5 0 0 1 -44 60" class="bs-rim"/>
+            <circle r="3" class="bs-hook"/>
+          </symbol>
+        </defs>
+
+        <ellipse cx="300" cy="189" rx="70" ry="3.5" class="bs-shadow"/>
+        <path class="bs-stand" d="M297.6 42 a2.4 2.4 0 0 1 4.8 0 L303 180 h-6 Z M270 189 a4 4 0 0 1 4 -6 h52 a4 4 0 0 1 4 6 Z"/>
+
+        <g transform="translate(300 64)">
+          <g class="beam">
+            <path class="bs-beam" d="M-222 -1.4 L0 -3.6 L222 -1.4 a1.4 1.4 0 0 1 0 2.8 L0 3.6 L-222 1.4 a1.4 1.4 0 0 1 0 -2.8 Z"/>
+            <g transform="translate(-220 0)">
+              <g class="pan">
+                <use href="#bs-pan-back"/>
+                <use href="#bs-m" x="-8.5" y="62"/>
+                <use href="#bs-m" x="8.5" y="62"/>
+                <use href="#bs-m" x="0" y="48.44" class="bs-leaving"/>
+                <use href="#bs-pan-front"/>
+                <text y="104" class="bs-label">{{ verse.pansA }}</text>
+              </g>
+            </g>
+            <g transform="translate(220 0)">
+              <g class="pan">
+                <use href="#bs-pan-back"/>
+                <use href="#bs-m" x="-8.5" y="62"/>
+                <g transform="translate(8.5 62)"><use href="#bs-m" class="bs-arriving"/></g>
+                <ellipse cx="8.5" cy="62" rx="12" ry="2.6" class="bs-ripple"/>
+                <use href="#bs-pan-front"/>
+                <text y="104" class="bs-label">{{ verse.pansB }}</text>
+              </g>
+            </g>
+          </g>
+          <circle r="5.5" class="bs-pivot"/>
+        </g>
+
+        <path class="bs-trail" d="M81.64 139.25 Q304.25 -73.14 526.86 99.19"/>
+        <g transform="translate(81.64 139.25)">
+          <g class="bs-fly-x"><g class="bs-fly-y"><use href="#bs-m"/></g></g>
         </g>
       </svg>
       <h1 class="verse">
