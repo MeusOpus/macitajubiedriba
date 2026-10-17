@@ -117,9 +117,12 @@ def build():
             page_id = page_file.stem
             nav = ""
             for item in t["nav"]:
+                href = item["href"]
+                if href.startswith(page_file.name + "#"):  # link to a section of this same page: keep only the #anchor
+                    href = href[len(page_file.name):]
                 attrs = ' class="nav-cta"' if item.get("cta") else ""
                 attrs += ' aria-current="page"' if item.get("page") == page_id else ""
-                nav += f'<a href="{item["href"]}"{attrs}>{html.escape(item["label"])}</a>'
+                nav += f'<a href="{href}"{attrs}>{html.escape(item["label"])}</a>'
             switch = ""
             if len(langs) > 1:
                 links = ""

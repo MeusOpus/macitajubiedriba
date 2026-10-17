@@ -31,7 +31,7 @@
   "nav": [
     { "label": "Sākums", "href": "index.html", "page": "index" },
     { "label": "Statūti", "href": "statuti.html", "page": "statuti" },
-    { "label": "Kontakti", "href": "#kontakti" },
+    { "label": "Kontakti", "href": "index.html#kontakti" },
     { "label": "Iestāties", "href": "iestaties.html", "page": "iestaties", "cta": true }
   ],
   "verse": {
@@ -96,6 +96,16 @@
       ],
       "cta": "Aizpildīt pieteikumu",
       "note": "Iestājoties tu apņemies ievērot biedrības <a href=\"statuti.html\">statūtus</a>."
+    },
+    "contacts": {
+      "eyebrow": "Kontakti",
+      "title": "Sazinies ar mums",
+      "lede": "Jautājumos par dalību vai palīdzību zvani kādam no valdes locekļiem vai raksti uz biedrības e-pastu.",
+      "board": "Valde",
+      "reach": "E-pasts un adrese",
+      "emailLabel": "E-pasts",
+      "addressLabel": "Adrese",
+      "req": "Rekvizīti"
     }
   },
   "statutes": {
@@ -156,7 +166,7 @@
       { "name": "Mārcis Zeiferts", "phone": "+371 29 145 305", "tel": "+37129145305" }
     ],
     "nameLabel": "Nosaukums",
-    "legalName": "Biedrība “Mācītāju atbalsta biedrība”",
+    "legalName": "“Mācītāju atbalsta biedrība”",
     "regLabel": "Reģ. Nr.",
     "reg": "40008202764",
     "bankLabel": "Banka",

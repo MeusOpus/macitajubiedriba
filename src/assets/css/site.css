@@ -29,6 +29,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 p { margin: 0; }
 ol, ul { margin: 0; padding: 0; list-style: none; }
 a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration: none; }
 :focus-visible { outline: 3px solid var(--water); outline-offset: 3px; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -203,6 +204,27 @@ a { color: var(--accent); text-underline-offset: 3px; }
   font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--accent); }
 .join-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 36px; }
 .join-foot p { font-size: 15px; color: var(--muted); }
+
+/* ---------- contacts (home) ---------- */
+.contact-grid { display: grid; gap: 20px; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.1fr); } }
+.c-card { display: grid; gap: 14px; align-content: start; min-width: 0; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.c-card h3 { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.people { display: grid; gap: 14px; }
+.person { display: grid; gap: 2px; }
+.person b { font-size: 17px; font-weight: 600; }
+.person a, .c-big { font-size: 20px; font-weight: 500; color: var(--accent); text-decoration: none; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.person a:hover, .c-big:hover { text-decoration: underline; }
+.c-line { display: grid; gap: 2px; }
+.c-line span { font-size: 14px; color: var(--muted); }
+.c-panel { background: var(--water-soft); border-color: transparent; }
+.c-panel dl { margin: 0; display: grid; gap: 8px; }
+.c-panel dl > div { display: grid; gap: 1px; }
+.c-panel dt { font-size: 13px; color: var(--muted); }
+.c-panel dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.c-panel .iban { margin-top: 2px; }
+.c-panel .iban code { font-size: 17px; }
+.c-panel .copy { color: var(--ink); }
 
 /* ---------- inner page header ---------- */
 .page-hd { padding-block: 56px 40px; display: grid; gap: 12px; }
