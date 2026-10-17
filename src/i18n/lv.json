@@ -155,6 +155,8 @@
       { "name": "Agris Sutra", "phone": "+371 29 243 697", "tel": "+37129243697" },
       { "name": "Mārcis Zeiferts", "phone": "+371 29 145 305", "tel": "+37129145305" }
     ],
+    "nameLabel": "Nosaukums",
+    "legalName": "Biedrība “Mācītāju atbalsta biedrība”",
     "regLabel": "Reģ. Nr.",
     "reg": "40008202764",
     "bankLabel": "Banka",
