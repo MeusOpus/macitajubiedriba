@@ -207,7 +207,10 @@ a:hover { text-decoration: none; }
 
 /* ---------- contacts (home) ---------- */
 .contact-grid { display: grid; gap: 20px; }
-@media (min-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.1fr); } }
+/* two columns on tablets (bank details below, full width); three on wide screens,
+   where the middle column holds the long email address and gets the most room */
+@media (min-width: 640px) { .contact-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .c-panel { grid-column: 1 / -1; } }
+@media (min-width: 1000px) { .contact-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1.2fr); } .c-panel { grid-column: auto; } }
 .c-card { display: grid; gap: 14px; align-content: start; min-width: 0; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .c-card h3 { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .people { display: grid; gap: 14px; }
