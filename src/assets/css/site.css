@@ -161,7 +161,7 @@ a:hover { text-decoration: none; }
   .split-rule { width: 1px; height: auto; }
 }
 .verse-ref { margin-top: 28px; }
-.hero-sub { max-width: 54ch; margin: 20px auto 28px; font-size: 18px; line-height: 1.6; color: var(--muted); }
+.hero-sub { max-width: 54ch; margin: 20px auto 28px; font-size: 18px; line-height: 1.6; color: var(--muted); text-wrap: balance; }
 .hero .ctas { justify-content: center; }
 
 /* ---------- sections ---------- */
